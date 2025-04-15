@@ -1,4 +1,4 @@
-# flutter_pjs_boilerplate2
+# actual
 
 A new Flutter project.
 
@@ -14,3 +14,19 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Generate code
+
+### build
+
+```bash
+$ flutter pub run build_runner build
+$ fvm flutter pub run build_runner build
+```
+
+### watch
+
+```bash
+$ flutter pub run build_runner watch
+$ fvm flutter pub run build_runner watch
+```
