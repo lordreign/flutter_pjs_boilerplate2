@@ -4,18 +4,18 @@ part 'board_model.g.dart';
 
 @JsonSerializable()
 class BoardModel {
-  final String id;
-  final String title;
-  final String content;
-  final String? createdAt;
-  final String? updatedAt;
+  final int id;
+  final String krTitle;
+  final String krContents;
+  final String? createdDtm;
+  final String? updatedDtm;
 
   BoardModel({
     required this.id,
-    required this.title,
-    required this.content,
-    this.createdAt,
-    this.updatedAt,
+    required this.krTitle,
+    required this.krContents,
+    this.createdDtm,
+    this.updatedDtm,
   });
 
   factory BoardModel.fromJson(Map<String, dynamic> json) =>
