@@ -20,3 +20,6 @@ const INPUT_BG_COLOR = Color(0xFF2C2C2C);
 
 // 포커스 색상
 const FOCUS_COLOR = Color(0xFF00D8FF);
+
+// 에러 색상
+const ERROR_COLOR = Color(0xFFFF4C4C);

@@ -2,7 +2,7 @@ import 'package:flutter_pjs_boilerplate2/models/common/cursor_pagination_model.d
 import 'package:flutter_pjs_boilerplate2/repositories/boards/board_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final restaurantProvider =
+final boardProvider =
     StateNotifierProvider<BoardStateNotifier, CursorPaginationBase>(
   (ref) {
     final repository = ref.watch(boardRepositoryProvider);
