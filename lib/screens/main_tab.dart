@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pjs_boilerplate2/common/constants/color.dart';
 import 'package:flutter_pjs_boilerplate2/layouts/default_layout.dart';
 import 'package:flutter_pjs_boilerplate2/screens/boards/board_screen.dart';
+import 'package:flutter_pjs_boilerplate2/screens/settings/setting_screen.dart';
 
 class MainTab extends StatefulWidget {
   const MainTab({super.key});
@@ -18,7 +19,7 @@ class _MainTabState extends State<MainTab> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = TabController(
-      length: 4,
+      length: 2,
       vsync: this, // mixin > SingleTickerProviderStateMixin 을 적용 해야함
     );
     controller.addListener(tabListener);
@@ -46,7 +47,7 @@ class _MainTabState extends State<MainTab> with SingleTickerProviderStateMixin {
         physics: NeverScrollableScrollPhysics(),
         children: [
           BoardScreen(),
-          BoardScreen(),
+          SettingScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -66,8 +67,8 @@ class _MainTabState extends State<MainTab> with SingleTickerProviderStateMixin {
             label: '홈',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: '프로필',
+            icon: Icon(Icons.settings),
+            label: '설정',
           ),
         ],
       ),
