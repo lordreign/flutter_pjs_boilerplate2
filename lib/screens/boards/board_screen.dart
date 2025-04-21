@@ -49,10 +49,48 @@ class _BoardScreenState extends ConsumerState<BoardScreen> {
       );
     }
 
-    return Center(
-      child: Text(
-        'Home Screen',
-        style: TextStyle(fontSize: 24),
+    final cp = data as CursorPagination;
+
+    return Container(
+      child: Center(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: ListView.separated(
+              controller: _scrollController,
+              itemCount: cp.data.length + 1,
+              itemBuilder: (_, index) {
+                if (index == cp.data.length) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    child: Center(
+                      child: data is CursorPaginationFetching
+                          ? CircularProgressIndicator()
+                          : Text(''),
+                    ),
+                  );
+                }
+
+                final parsedItem = cp.data[index];
+
+                return GestureDetector(
+                  onTap: () {
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (_) => BaordDetailScreen(
+                    //       id: parsedItem.id,
+                    //     ),
+                    //   ),
+                    // );
+                  },
+                  child: Center(
+                    child: Text('text'),
+                  ),
+                );
+              },
+              separatorBuilder: (_, index) {
+                return const SizedBox(height: 16);
+              },
+            )),
       ),
     );
   }
