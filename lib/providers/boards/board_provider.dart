@@ -30,7 +30,7 @@ class BoardStateNotifier extends StateNotifier<CursorPaginationBase> {
     bool forceRefetch = false,
   }) async {
     try {
-      if (state is CursorPaginationLoading && !forceRefetch) {
+      if (state is CursorPagination && !forceRefetch) {
         final cpState = state as CursorPagination;
 
         if (cpState.meta.totalCount <= (cpState.meta.totalPage * size)) {
@@ -40,13 +40,12 @@ class BoardStateNotifier extends StateNotifier<CursorPaginationBase> {
 
       final isLoading = state is CursorPaginationLoading;
       final isFetching = state is CursorPaginationFetching;
-
       if (fetchMore && (isLoading || isFetching)) {
         return;
       }
-
       // pagination params 생성
       PaginationParams paginationParams = PaginationParams(
+        boardId: 'NEWS',
         page: 1,
         size: size,
       );
@@ -86,6 +85,7 @@ class BoardStateNotifier extends StateNotifier<CursorPaginationBase> {
         state = resp;
       }
     } catch (e) {
+      print(e);
       state = CursorPaginationError(
         message: '데이터를 가져오지 못했습니다.',
       );

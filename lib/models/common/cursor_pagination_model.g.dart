@@ -9,7 +9,7 @@ part of 'cursor_pagination_model.dart';
 CursorPaginationMeta _$CursorPaginationMetaFromJson(
         Map<String, dynamic> json) =>
     CursorPaginationMeta(
-      result: json['result'] as String,
+      result: json['result'] as bool,
       currentPage: (json['currentPage'] as num).toInt(),
       totalPage: (json['totalPage'] as num).toInt(),
       totalCount: (json['totalCount'] as num).toInt(),

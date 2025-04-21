@@ -16,7 +16,7 @@ class CursorPaginationLoading extends CursorPaginationBase {}
 
 @JsonSerializable()
 class CursorPaginationMeta {
-  final String result;
+  final bool result;
   final int currentPage;
   final int totalPage;
   final int totalCount;
@@ -29,7 +29,8 @@ class CursorPaginationMeta {
   });
 
   CursorPaginationMeta copyWith({
-    String? result,
+    bool? result,
+    int? currentPage,
     int? totalCount,
     int? totalPage,
   }) {
