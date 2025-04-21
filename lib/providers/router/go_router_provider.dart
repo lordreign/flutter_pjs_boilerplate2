@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_pjs_boilerplate2/screens/home_screen.dart';
+import 'package:flutter_pjs_boilerplate2/screens/main_tab.dart';
 import 'package:flutter_pjs_boilerplate2/screens/splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -15,7 +15,7 @@ class RouterProvider extends ChangeNotifier {
         GoRoute(
           path: '/',
           name: 'home',
-          builder: (_, __) => HomeScreen(),
+          builder: (_, __) => MainTab(),
         ),
         GoRoute(
           path: '/splash',

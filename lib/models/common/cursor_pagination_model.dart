@@ -17,11 +17,13 @@ class CursorPaginationLoading extends CursorPaginationBase {}
 @JsonSerializable()
 class CursorPaginationMeta {
   final String result;
+  final int currentPage;
   final int totalPage;
   final int totalCount;
 
   CursorPaginationMeta({
     required this.result,
+    required this.currentPage,
     required this.totalPage,
     required this.totalCount,
   });
@@ -33,6 +35,7 @@ class CursorPaginationMeta {
   }) {
     return CursorPaginationMeta(
       result: result ?? this.result,
+      currentPage: currentPage ?? this.currentPage,
       totalCount: totalCount ?? this.totalCount,
       totalPage: totalPage ?? this.totalPage,
     );

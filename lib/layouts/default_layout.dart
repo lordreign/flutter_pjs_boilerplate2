@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pjs_boilerplate2/common/constants/color.dart';
 
 class DefaultLayout extends StatelessWidget {
   final Color backgroundColor;
@@ -34,13 +35,14 @@ class DefaultLayout extends StatelessWidget {
       return null;
     }
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: BACKGROUND_COLOR,
       automaticallyImplyLeading: automaticallyImplyLeading,
       title: Text(
         title!,
         style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
+          color: TEXT_COLOR,
         ),
       ),
       elevation: 0,

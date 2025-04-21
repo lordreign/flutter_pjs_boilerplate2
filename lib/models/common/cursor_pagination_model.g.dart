@@ -10,6 +10,7 @@ CursorPaginationMeta _$CursorPaginationMetaFromJson(
         Map<String, dynamic> json) =>
     CursorPaginationMeta(
       result: json['result'] as String,
+      currentPage: (json['currentPage'] as num).toInt(),
       totalPage: (json['totalPage'] as num).toInt(),
       totalCount: (json['totalCount'] as num).toInt(),
     );
@@ -18,6 +19,7 @@ Map<String, dynamic> _$CursorPaginationMetaToJson(
         CursorPaginationMeta instance) =>
     <String, dynamic>{
       'result': instance.result,
+      'currentPage': instance.currentPage,
       'totalPage': instance.totalPage,
       'totalCount': instance.totalCount,
     };

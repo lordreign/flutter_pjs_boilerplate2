@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // 주색상
-const PRIMARY_COLOR = Color(0xFF22A45D);
+const PRIMARY_COLOR = Color(0xFFFFFFFF);
 
 // 배경 색상
 const BACKGROUND_COLOR = Color(0xFF414141);

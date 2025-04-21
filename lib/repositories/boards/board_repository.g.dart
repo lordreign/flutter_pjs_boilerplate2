@@ -19,20 +19,12 @@ class _BoardRepository implements BoardRepository {
 
   @override
   Future<CursorPagination<BoardModel>> getBoards({
-    String boardId = 'NEWS',
-    int page = 0,
-    int size = 20,
-    String sort = 'id',
-    String sortType = 'desc',
+    PaginationParams? paginationParams = const PaginationParams(),
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'boardId': boardId,
-      r'page': page,
-      r'size': size,
-      r'sort': sort,
-      r'sortType': sortType,
-    };
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(paginationParams?.toJson() ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<CursorPagination<BoardModel>>(
